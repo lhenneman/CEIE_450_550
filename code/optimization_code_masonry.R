@@ -46,7 +46,7 @@ model <- MIPModel() %>%
 
   # Constraint 3: Stay within each plant's physical capacity
   # This automatically creates one constraint for every plant 'i'
-  add_constraint(x[i] <= plants$max_cap[i], i = 1:2)
+  add_constraint(x[i] <= products$max_cap[i], i = 1:2)
 
 # 5. SOLVE THE MODEL
 result <- solve_model(model, with_ROI(solver = "glpk", verbose = TRUE))

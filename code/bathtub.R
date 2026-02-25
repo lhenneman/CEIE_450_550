@@ -17,12 +17,23 @@ time <- seq( from = 0, by = dt, length.out = n.steps + 1)
 Qi <- c( 0, rep( 0, 10), rep( 5, 10))
 Qo <- c( 0, rep( 5, 20))
 
-# plot the flows
+## plot the flows
+# plotting settings to show 2 plots on same screen
 par( mfrow = c( 1, 2))
+
+# plot the inflow over time
 plot( x = time, y = Qi, ylim = c( 0, 10), type = 'l',
-      main = 'Bathtub, base model', ylab = 'Inflow, gal/min', xlab = 'time, min')
+      main = 'Bathtub, base model', 
+      ylab = 'Inflow, gal/min', 
+      xlab = 'time, min')
+
+# plot the outflow over time
 plot( x = time, y = Qo, ylim = c( 0, 10), type = 'l',
-      main = 'Bathtub, base model', ylab = 'Outflow, gal/min', xlab = 'time, min')
+      main = 'Bathtub, base model', 
+      ylab = 'Outflow, gal/min', 
+      xlab = 'time, min')
+
+# reset the plotting settings to just show one plot
 par( mfrow = c( 1, 1))
 
 ## ========================================= ##
